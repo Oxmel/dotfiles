@@ -14,6 +14,8 @@ set incsearch
 set number
 " Enable backspace normal behavior
 set backspace=indent,eol,start
+" Disable swap file generation
+set noswapfile
 " Enable filetype detection
 filetype on
 filetype plugin on
