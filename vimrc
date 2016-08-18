@@ -58,10 +58,12 @@ highlight TablineSel cterm=bold ctermfg=Green ctermbg=Black
 " Remap Esc for ;; (press it twice)
 imap ;; <Esc>
 map ;; <Esc>
-" Bind CTRL + Z to save
+" Bind Ctrl + n to select all lines
+map <C-a> <esc>ggVG<CR>
+" Bind Ctrl + z to save
 nnoremap <C-z> :w<CR>
-" Bind CTRl + A to toggle NerdTree
-nnoremap <C-a> :NERDTreeToggle<CR>
+" Bind Ctrl + n to toggle NerdTree
+nnoremap <C-n> :NERDTreeToggle<CR>
 " Setup default folder for NerdTree
 " autocmd VimEnter * NERDTree ~/Path/to/Project
 
