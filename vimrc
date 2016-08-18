@@ -58,7 +58,7 @@ highlight TablineSel cterm=bold ctermfg=Green ctermbg=Black
 " Remap Esc for ;; (press it twice)
 imap ;; <Esc>
 map ;; <Esc>
-" Bind Ctrl + n to select all lines
+" Bind Ctrl + a to select all lines
 map <C-a> <esc>ggVG<CR>
 " Bind Ctrl + z to save
 nnoremap <C-z> :w<CR>
