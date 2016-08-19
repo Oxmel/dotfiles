@@ -36,7 +36,7 @@ set tabstop=4
 " Pareil que Tab à revérifier
 set shiftwidth=4
 "Force linewrap after the 79th char
-set tw=79
+"set tw=79
 " Add a vertical bar to show the 80 char limit 
 set colorcolumn=80
 " Call plugin agent and agent helper
