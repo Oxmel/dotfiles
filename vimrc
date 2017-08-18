@@ -26,7 +26,7 @@ filetype indent on
 " Enable 256 colors
 "set t_Co=256
 " Set monokai as default colorscheme (see .vim/colors)
-colorscheme monokai 
+colorscheme monokai
 " Activate syntax higlighting
 syntax on
 " Activate mouse control
@@ -37,7 +37,7 @@ set tabstop=4
 set shiftwidth=4
 "Force linewrap after the 79th char
 "set tw=79
-" Add a vertical bar to show the 80 char limit 
+" Add a vertical bar to show the 80 char limit
 set colorcolumn=80
 " Call plugin agent and agent helper
 execute pathogen#infect()
@@ -67,8 +67,16 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " Setup default folder for NerdTree
 " autocmd VimEnter * NERDTree ~/Path/to/Project
 
-" Ctrl + left arrow switch to prev tab 
+" Ctrl + left arrow switch to prev tab
 " (yeah yeah, one file per tab's a bad pratice blah blah blah)
 nnoremap <C-left> :tabp<CR>
 " Ctrl + right arrow switch to next tab
 nnoremap <C-right> :tabn<CR>
+
+" Highlight trailing whitespaces and blank lines with unwanted spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
