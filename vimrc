@@ -33,8 +33,11 @@ syntax on
 set mouse=a
 " One Tab equals four spaces
 set tabstop=4
-" Pareil que Tab à revérifier
+" Size of an indent measured in spaces
+" Needs to equal tabstop, value is also used by '<' and '>'
 set shiftwidth=4
+" Insert spaces when tab is used to ensure consistency between editors
+set expandtab
 "Force linewrap after the 79th char
 "set tw=79
 " Add a vertical bar to show the 80 char limit
