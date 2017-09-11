@@ -57,26 +57,27 @@ highlight TabLine cterm=bold ctermfg=LightGrey ctermbg=DarkGrey
 " Active Tab color
 highlight TablineSel cterm=bold ctermfg=Green ctermbg=Black
 
-" Get current file type and name
-" Select interpreter based on file type and build the exec command
+" A convenient way to exec all sorts of scripts (complete the list below)
+" Also works with user inputs (tested with python 'raw_input')
 " https://stackoverflow.com/a/30341535
 function! ExecByFiletype()
-    " List of commonly used language and their interpreters
-    let formatFiletype = {
+    " List of commonly used languages and their interpreters
+    let getInterpreter = {
     \   'javascript': 'node',
     \   'python': 'python',
     \   'sh': 'bash'
     \ }
     " Get matching interpreter based on filetype (e.g 'python')
-    let scripFiletype = get(formatFiletype, &filetype, &filetype)
+    let scriptType = get(getInterpreter, &filetype, &filetype)
     " Get file name (e.g 'file.py')
     let scriptName = expand("%")
     " Build the command and exec (e.g ':!python file.py')
-    exe '!' . scripfileType scriptName
+    exe '!' . scriptType scriptName
 endfunction
 
-" Execute current script
+" Select interpreter based on file type and exec file
 map <C-p> :call ExecByFiletype()<CR>
+
 " Remap Esc for ;; (press it twice)
 imap ;; <Esc>
 map ;; <Esc>
