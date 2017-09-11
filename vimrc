@@ -72,7 +72,8 @@ function! ExecByFiletype()
     " Get file name (e.g 'file.py')
     let scriptName = expand("%")
     " Build the command and exec (e.g ':!python file.py')
-    exe '!' . scriptType scriptName
+    " Clear the screen first for better readability
+    exe '!clear;' . scriptType scriptName
 endfunction
 
 " Select interpreter based on file type and exec file
