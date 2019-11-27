@@ -36,12 +36,21 @@ set tabstop=4
 " Size of an indent measured in spaces
 " Needs to equal tabstop, value is also used by '<' and '>'
 set shiftwidth=4
+
+" Set tabs with a width of 2 characters for html files
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+
+" Autoformat paragraphs when editing markdown files
+" This will also hard wrap each line after the 80th char
+autocmd FileType md,markdown setlocal formatoptions+=a
+
 " Insert spaces when tab is used to ensure consistency between editors
 set expandtab
 "Force linewrap after the 79th char
 "set tw=79
 " Add a vertical bar to show the 80 char limit
 set colorcolumn=80
+
 " Call plugin agent and agent helper
 execute pathogen#infect()
 call pathogen#helptags()
