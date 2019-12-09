@@ -130,12 +130,11 @@ nnoremap <C-z> :w<CR>
 " Bind Ctrl + n to toggle NerdTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-" Ctrl + left arrow switch to prev tab
-" (yeah yeah, one file per tab's a bad pratice blah blah blah)
-nnoremap <C-left> :tabp<CR>
+" Ctrl + left arrow to switch to prev buffer
+nnoremap <C-left> :bprev<CR>
 
-" Ctrl + right arrow switch to next tab
-nnoremap <C-right> :tabn<CR>
+" Ctrl + right arrow to switch to next buffer
+nnoremap <C-right> :bnext<CR>
 
 "
 "" Utilities
