@@ -29,6 +29,9 @@ call vundle#end()
 "" Plugin settings
 "
 
+" Airline theme
+let g:airline_theme='powerlineish'
+
 " Display all buffers on top
 let g:airline#extensions#tabline#enabled = 1
 
