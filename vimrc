@@ -29,6 +29,9 @@ call vundle#end()
 "" Plugin settings
 "
 
+" Display all buffers on top
+let g:airline#extensions#tabline#enabled = 1
+
 " Set default folder for NerdTree
 " autocmd VimEnter * NERDTree ~/Path/to/Project
 
