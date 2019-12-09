@@ -1,10 +1,33 @@
 "
-"" Plugins
+"" Plugin manager
 "
 
-" Call plugin agent and agent helper
-execute pathogen#infect()
-call pathogen#helptags()
+" Required to use Vundle
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"
+"" Plugin list
+"
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'crusoexia/vim-monokai'
+
+call vundle#end()
+
+"
+"" Plugin settings
+"
 
 " Set default folder for NerdTree
 " autocmd VimEnter * NERDTree ~/Path/to/Project
@@ -13,8 +36,6 @@ call pathogen#helptags()
 "" General
 "
 
-" Switch off Vi compatibility
-set nocompatible
 " Disable swap file generation
 set noswapfile
 
