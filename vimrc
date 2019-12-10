@@ -35,9 +35,6 @@ let g:airline_theme='desertink'
 " Display all buffers on top
 let g:airline#extensions#tabline#enabled = 1
 
-" Customize the filename section (readonly flag, full path to the file)
-let g:airline_section_c = airline#section#create(['%r', '%m', '%f'])
-
 " This section normally shows filtetype but we disable it as we already
 " display the same info on the next section
 let g:airline_section_x = ''
