@@ -158,9 +158,6 @@ map <C-p> :call ExecByFiletype()<CR>
 imap ;; <Esc>
 map ;; <Esc>
 
-" Bind Ctrl + z to save
-nnoremap <C-z> :w<CR>
-
 " Bind Ctrl + n to toggle NerdTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
@@ -204,4 +201,3 @@ match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
