@@ -170,6 +170,11 @@ nnoremap <C-left> :bprev<CR>
 " Ctrl + right arrow to switch to next buffer
 nnoremap <C-right> :bnext<CR>
 
+" Switch to previous buffer before closing the current one
+" This prevents weird behaviors when using NERDTree
+" https://stackoverflow.com/q/31805805
+nnoremap <C-down> :bp<CR>:bd #<CR>
+
 "
 "" Utilities
 "
