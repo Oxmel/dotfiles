@@ -30,7 +30,7 @@ call vundle#end()
 "
 
 " Airline theme
-let g:airline_theme='powerlineish'
+let g:airline_theme='desertink'
 
 " Display all buffers on top
 let g:airline#extensions#tabline#enabled = 1
@@ -64,6 +64,11 @@ set backspace=indent,eol,start
 " Enable filetype detection
 filetype plugin indent on
 
+" This special character will be used to draw the bar when splitting windows
+" vertically. This gives the bar a much better look, but the result might vary
+" from one setup to another as it seems to work with some fonts but not others
+set fillchars=vert:\│
+
 "
 "" Colors
 "
@@ -78,25 +83,26 @@ colorscheme monokai
 autocmd ColorScheme * highlight ModeMsg ctermfg=white
 " Background
 autocmd ColorScheme * highlight Normal ctermfg=231 ctermbg=235
-" Delimiter (vertical bar to show max char limit)
+" Vertical bar that shows max char limit
 autocmd ColorScheme * highlight ColorColumn ctermbg=236
-" Tab bar
-autocmd ColorScheme * highlight TabLineFill term=bold cterm=bold ctermbg=8
-" Inactive Tab
-autocmd ColorScheme * highlight TabLine cterm=bold ctermfg=LightGrey ctermbg=DarkGrey
-" Active Tab
-autocmd ColorScheme * highlight TablineSel cterm=bold ctermfg=Green ctermbg=Black
-" Delimiter (NERDTree and split pane)
+" Bar used when splitting windows (also used for NERDTree)
 autocmd ColorScheme * highlight VertSplit ctermfg=darkgrey ctermbg=None
-" NERDTree Folder
-autocmd ColorScheme * highlight NERDTreeDir ctermfg=141
-" Slash that appears on the right of the folder name
-autocmd ColorScheme * highlight NERDTreeDirSlash ctermfg=141
-" Folder arrow (not opened)
-autocmd ColorScheme * highlight NERDTreeOpenable ctermfg=81
-" Folder arrow (opened)
-autocmd ColorScheme * highlight NERDTreeClosable ctermfg=81
 
+" Tab bar
+"autocmd ColorScheme * highlight TabLineFill term=bold cterm=bold ctermbg=8
+" Inactive Tab
+"autocmd ColorScheme * highlight TabLine cterm=bold ctermfg=LightGrey ctermbg=DarkGrey
+" Active Tab
+"autocmd ColorScheme * highlight TablineSel cterm=bold ctermfg=Green ctermbg=Black
+
+" NERDTree folder
+"autocmd ColorScheme * highlight NERDTreeDir ctermfg=145
+" NERDTree folder slash
+"autocmd ColorScheme * highlight NERDTreeDirSlash ctermfg=141
+" NERDTree folder arrow (not opened)
+"autocmd ColorScheme * highlight NERDTreeOpenable ctermfg=81
+" NERDTree folder arrow (opened)
+"autocmd ColorScheme * highlight NERDTreeClosable ctermfg=81
 
 "
 "" Ergonomy
