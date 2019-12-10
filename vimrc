@@ -146,10 +146,6 @@ set shiftwidth=4
 " Set tabs with a width of 2 characters for html files
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
-" Autoformat paragraphs when editing markdown files
-" This will also hard wrap each line after the 80th char
-autocmd FileType md,markdown setlocal formatoptions+=a
-
 "
 "" Key mapping
 "
@@ -174,6 +170,9 @@ nnoremap <C-right> :bnext<CR>
 " This prevents weird behaviors when using NERDTree
 " https://stackoverflow.com/q/31805805
 nnoremap <C-down> :bp<CR>:bd #<CR>
+
+" Toggle autoformat on and off
+nnoremap <C-a> :call ToggleFormat()<CR>
 
 "
 "" Utilities
@@ -204,3 +203,14 @@ match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Toggle autoformat and echo the corresponding status
+function! ToggleFormat()
+    if &formatoptions !~ 'a'
+        set fo+=a
+        echo "Autoformat On"
+    else
+        set fo-=a
+        echo "Autoformat Off"
+    endif
+endfunction
