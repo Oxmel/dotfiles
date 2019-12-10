@@ -35,6 +35,19 @@ let g:airline_theme='powerlineish'
 " Display all buffers on top
 let g:airline#extensions#tabline#enabled = 1
 
+" Customize the filename section (readonly flag, full path to the file)
+let g:airline_section_c = airline#section#create(['%r', '%m', '%f'])
+
+" This section normally shows filtetype but we disable it as we already
+" display the same info on the next section
+let g:airline_section_x = ''
+
+" Customize the file encoding section (fileformat, encoding, filetype)
+let g:airline_section_y = airline#section#create(['%{&fileformat}', ' | ', '%{&fenc}', ' | ', '%{strlen(&ft) ? &ft : "unknown"}'])
+
+" Customize current position in file (percentage, line N, virtualcolumn N)
+let g:airline_section_z = airline#section#create(['%3p%%', ' | ', 'LN', '%3l',':','%-3v'])
+
 " Set default folder for NerdTree
 " autocmd VimEnter * NERDTree ~/Path/to/Project
 
@@ -55,17 +68,35 @@ filetype plugin indent on
 "" Colors
 "
 
-" Bar color
-highlight ColorColumn ctermbg=236
-" Tab bar color
-highlight TabLineFill term=bold cterm=bold ctermbg=8
-" Inactive Tab color (foreground, background)
-highlight TabLine cterm=bold ctermfg=LightGrey ctermbg=DarkGrey
-" Active Tab color
-highlight TablineSel cterm=bold ctermfg=Green ctermbg=Black
-
-" Set monokai as default colorscheme (see .vim/colors)
+" Set default colorscheme (see .vim/colors)
 colorscheme monokai
+
+" This method allows to override some colors of the selected colorscheme
+" https://stackoverflow.com/a/7383051
+
+" Mode message (e.g. '-- Insert --')
+autocmd ColorScheme * highlight ModeMsg ctermfg=white
+" Background
+autocmd ColorScheme * highlight Normal ctermfg=231 ctermbg=235
+" Delimiter (vertical bar to show max char limit)
+autocmd ColorScheme * highlight ColorColumn ctermbg=236
+" Tab bar
+autocmd ColorScheme * highlight TabLineFill term=bold cterm=bold ctermbg=8
+" Inactive Tab
+autocmd ColorScheme * highlight TabLine cterm=bold ctermfg=LightGrey ctermbg=DarkGrey
+" Active Tab
+autocmd ColorScheme * highlight TablineSel cterm=bold ctermfg=Green ctermbg=Black
+" Delimiter (NERDTree and split pane)
+autocmd ColorScheme * highlight VertSplit ctermfg=darkgrey ctermbg=None
+" NERDTree Folder
+autocmd ColorScheme * highlight NERDTreeDir ctermfg=141
+" Slash that appears on the right of the folder name
+autocmd ColorScheme * highlight NERDTreeDirSlash ctermfg=141
+" Folder arrow (not opened)
+autocmd ColorScheme * highlight NERDTreeOpenable ctermfg=81
+" Folder arrow (opened)
+autocmd ColorScheme * highlight NERDTreeClosable ctermfg=81
+
 
 "
 "" Ergonomy
