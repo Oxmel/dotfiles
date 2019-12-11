@@ -29,6 +29,9 @@ call vundle#end()
 "" Plugin settings
 "
 
+" Set default folder for NerdTree
+" autocmd VimEnter * NERDTree ~/Path/to/Project
+
 " Airline theme
 let g:airline_theme='desertink'
 
@@ -45,8 +48,45 @@ let g:airline_section_y = airline#section#create(['%{&fileformat}', ' | ', '%{&f
 " Customize current position in file (percentage, line N, virtualcolumn N)
 let g:airline_section_z = airline#section#create(['%3p%%', ' | ', 'LN', '%3l',':','%-3v'])
 
-" Set default folder for NerdTree
-" autocmd VimEnter * NERDTree ~/Path/to/Project
+" Custom symbols (might require a patched font)
+" See :help airline-customization for more info
+let g:airline_powerline_fonts = 1
+
+" Check if symbols are alreay present
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" The problem with custom symbols is the fact that we have no way to
+" automatically check if a patched font is installed and in use. So here is a
+" semi workaround that allows to quickly switch between unicode or powerline
+function! UnicodeSymbols()
+    let g:airline_left_sep = '▶'
+    let g:airline_left_alt_sep = '»'
+    let g:airline_right_sep = '◀'
+    let g:airline_right_alt_sep = '«'
+    let g:airline_symbols.branch = 'ᚠ'
+    let g:airline_symbols.readonly = '[RO]'
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.maxlinenr = 'ln'
+    let g:airline_symbols.dirty=' *'
+endfunction
+
+function! PowerlineSymbols()
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = '[RO]'
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.dirty=' *'
+endfunction
+
+" Choose which symbols to use
+"call UnicodeSymbols()
+call PowerlineSymbols()
 
 "
 "" General
