@@ -103,6 +103,11 @@ else
     alias turnoff='sudo shutdown -h now'
 fi
 
+# Force english to be used in the terminal even if a different locale is set
+# Unset LC_ALL first so it will not override the value below
+unset LC_ALL
+export LC_MESSAGES=C
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 #alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
