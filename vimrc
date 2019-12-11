@@ -39,6 +39,10 @@ let g:NERDTreeDirArrowCollapsible = '└'
 " Airline theme
 let g:airline_theme='desertink'
 
+" Hide separator (arrow) if the section is inactive
+" https://github.com/vim-airline/vim-airline/issues/1172#issue-154886936
+let g:airline_skip_empty_sections = 1
+
 " Display all buffers on top
 let g:airline#extensions#tabline#enabled = 1
 
