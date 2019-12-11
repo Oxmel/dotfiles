@@ -32,6 +32,10 @@ call vundle#end()
 " Set default folder for NerdTree
 " autocmd VimEnter * NERDTree ~/Path/to/Project
 
+" Use better looking icons for opened / closed folders
+let g:NERDTreeDirArrowExpandable = '├'
+let g:NERDTreeDirArrowCollapsible = '└'
+
 " Airline theme
 let g:airline_theme='desertink'
 
