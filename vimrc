@@ -17,7 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 "" Plugin list
 "
 
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
